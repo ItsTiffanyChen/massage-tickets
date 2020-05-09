@@ -1,0 +1,78 @@
+* {
+  /* border: 1px solid grey; */
+}
+
+#app {
+  position: relative;
+}
+.ticket-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.ticket {
+  border: 5px solid #fab85a;
+  text-align: center;
+  width: 120px;
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.ticket:hover {
+  opacity: .8;
+}
+
+.ticket img {
+  width: 100%;
+}
+
+.ticket div {
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+}
+
+.link {
+  text-decoration: underline;
+  color: #2984d9;
+  cursor: pointer;
+}
+.switch {
+  text-align: center;
+}
+
+.confirm {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 400px;
+  top: 10px;
+  border-radius: 10px;
+  background-color: rgba(74, 76, 79, .7);
+}
+
+.confirm p {
+  background-color: rgba(250, 252, 255, .8);
+  width: 98%;
+  height: 30px;
+}
+
+.confirm button {
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  margin: 10px;
+  background-color:rgba(250, 252, 255, .8);
+}
+
+.focus {
+  font-weight: bold;
+  color: #db9200;
+  
+}

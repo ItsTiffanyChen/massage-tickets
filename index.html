@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>媽咪ㄉ按摩券</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div id="app">
+    <p class="switch"><span class="link" @click="togglePerson">點我</span>切換到高級<b><span v-if="selectedPerson=='tiff'">馨柔</span><span v-else>馨怡</span>按摩券</b></p>
+    <div class="ticket-container">
+      <ticket v-if="selectedPerson=='tiff'" v-for="ticket of tiffTickets" :ticket="ticket" @confirm="confirm"></ticket>
+      <ticket v-if="selectedPerson=='claire'" v-for="ticket of claireTickets" :ticket="ticket" @confirm="confirm"></ticket>
+      <div class="confirm" v-if="selected" class="confirm"><p>{{alert}}</p><div><button @click="use">確認</button><button @click="cancel">取消</button></div></div>
+    </div>
+  </div>
+
+ 
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCWWyrWooRbBsmRjTa9PEGCPNCC104ELAk",
+    authDomain: "customizedtodo.firebaseapp.com",
+    databaseURL: "https://customizedtodo.firebaseio.com",
+    projectId: "customizedtodo",
+    storageBucket: "customizedtodo.appspot.com",
+    messagingSenderId: "39861170636",
+    appId: "1:39861170636:web:a7bc733de990a42187ad69",
+    measurementId: "G-ECQ1E90HBT"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.firestore();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./index.js"></script>
+
+</body>
+</html>
